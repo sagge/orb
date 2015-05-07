@@ -1,0 +1,204 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+    <!--
+    <ImageView
+        android:id="@+id/orbPallo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/orb_pallo"
+        android:layout_gravity="center"
+        android:visibility="invisible"/>
+
+        -->
+
+    <ImageView
+        android:id="@+id/imageViewCompass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/img_compass"
+        android:visibility="invisible"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:id="@+id/distanceField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_weight="0">
+            <TextView
+                android:id="@+id/Distance1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:keepScreenOn="true"
+                android:textColor="#33b5e5"
+                android:textStyle="italic"
+                android:textSize="20sp"
+                android:text="Distance: " />
+
+            <TextView
+                android:id="@+id/Distance2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#33b5e5"
+                android:text="unknown"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_weight="0" >
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:keepScreenOn="true"
+                android:textColor="#33b5e5"
+                android:textStyle="italic"
+                android:textSize="20sp"
+                android:text="Latitude: " />
+
+            <TextView
+                android:id="@+id/TextView02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#33b5e5"
+                android:text="unknown"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/TextView03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#33b5e5"
+                android:textStyle="italic"
+                android:textSize="20sp"
+                android:text="Longitude: " />
+
+            <TextView
+                android:id="@+id/TextView04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:keepScreenOn="true"
+                android:textColor="#33b5e5"
+                android:text="unknown"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tvHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#33b5e5"
+                android:textStyle="italic"
+                android:textSize="20sp"
+                android:text="Heading: 0.0" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
+        </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:keepScreenOn="true"
+        android:textColor="#33b5e5"
+        android:textStyle="italic"
+        android:textSize="50sp"
+        android:gravity="center"
+        android:text="@string/initial" />
+
+    <FrameLayout
+        android:id="@+id/screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="#000000"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:layout_gravity="top|start"
+                android:src="@drawable/orb"/>
+
+            <ImageButton
+                android:id="@+id/GetServerData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/updatebutton"
+                android:background="#000000"
+                android:layout_weight="1"/>
+
+            <!-- Set OnClickListener to trigger results when pressed -->
+            <ImageButton
+                android:id="@+id/options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:layout_weight="0"
+                android:background="#000000"
+                android:src="@drawable/options"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>
